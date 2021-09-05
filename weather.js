@@ -3,9 +3,18 @@ const setInnerText = (id, value) => {
     document.getElementById(id).innerText = value;
 }
 
+//temperatureSet function
+const temperatureSet = (id, value) => {
+    document.getElementById(id).innerHTML = `
+     <span>${value}</span>&deg;C
+    `;
+}
+
 
 //searchTemperature function
 const searchTemperature = () => {
+    //clear data
+    document.getElementById('validation-check').innerText = '';
     const cityName = document.getElementById('city-name').value;
     //input validation
     if (cityName) {
@@ -18,9 +27,8 @@ const searchTemperature = () => {
             .then(data => displayTemperature(data))
     }
     else {
-        setInnerText('validation-check', 'Please enter a city name!');
+        document.getElementById('validation-check').innerText = `Please enter a city name!`;
     }
-
 }
 
 
@@ -30,7 +38,7 @@ const displayTemperature = temperature => {
     //set city name
     setInnerText('city', temperature.name);
     //set temperature
-    setInnerText('temperature', temperature.main.temp);
+    temperatureSet('temp', temperature.main.temp);
     //set condition
     setInnerText('condition', temperature.weather[0].main);
     //set weather-icon
