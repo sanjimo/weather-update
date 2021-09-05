@@ -20,6 +20,10 @@ const searchTemperature = () => {
 //displayTemperature function
 const displayTemperature = temperature => {
     console.log(temperature);
+    //set city name
     setInnerText('city', temperature.name);
+    //set condition
     setInnerText('condition', temperature.weather[0].main);
+    //set weather-icon
+    document.getElementById('weather-icon').setAttribute('src', `https://openweathermap.org/img/wn/${temperature.weather[0].icon}@2x.png`);
 }
