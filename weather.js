@@ -21,4 +21,5 @@ const searchTemperature = () => {
 const displayTemperature = temperature => {
     console.log(temperature);
     setInnerText('city', temperature.name);
+    setInnerText('condition', temperature.weather[0].main);
 }
