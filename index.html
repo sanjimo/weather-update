@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <style>
         body {
-            background: url(images/bg-image.jpg) no-repeat;
+            background: url(images/image.jpg) no-repeat;
             background-size: cover;
             height: 100vh;
         }
@@ -19,23 +19,26 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-4">
+        <!--search input area-->
         <form class="col-md-6 m-auto py-5">
             <div class="input-group mb-3">
-                <input id="city-name" type="text" class="form-control" placeholder="Enter a location for Weather ...">
+                <input id="city-name" type="text" class="form-control"
+                    placeholder="Enter a City name for Weather Update...">
                 <div class="input-group-append">
                     <button onclick="searchTemperature()" type="button" class="btn btn-success">Search</button>
                 </div>
             </div>
         </form>
+        <!--validation message area-->
         <h1 id="validation-check" class="text-center text-white"></h1>
-        <div class="weather-status text-white text-center">
-            <img id="weather-icon" src="" alt="">
-            <h1 id="city"></h1>
-            <h2 id="temp"></h2>
-            <h3 id="condition"></h3>
-        </div>
+
+        <!--temperature display area-->
+        <section id="temperature-info">
+        </section>
     </div>
+
+    <!--javascript link area-->
     <script src="weather.js"></script>
 </body>
 
